@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Profile</h2>
+
+<div>
+  <p><b>{{ request.user.username }}</b></p>
+</div>
+<div class="user-details">
+  <div>
+    <p>
+      Email:
+    </p>
+    <p>
+      Last active:
+    </p>
+    <p>
+      Account created:
+    </p>
+    <p>
+      Change password
+    </p>
+  </div>
+  <div>
+    <p>
+      {{ request.user.email }}
+    </p>
+    <p>
+      
+    </p>
+  </div>
+</div>
+
+
+<div>
+  <p><b>Story Submissions</b></p>
+</div>
+{% endblock %}

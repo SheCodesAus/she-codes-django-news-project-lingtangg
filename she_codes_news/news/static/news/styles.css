@@ -84,3 +84,8 @@
     margin: 0 0 10px 10px;
     width: 50%;
 }
+
+/* Form styling */
+.form-control {
+    background-color: red;
+}
