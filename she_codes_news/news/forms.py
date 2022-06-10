@@ -10,3 +10,6 @@ class StoryForm(ModelForm):
     widgets = {
       'pub_date': forms.DateInput(format=('%m/%d/%Y'),attrs={'class':'form-control', 'placeholder':'Select a date','type':'date'}),
     }
+
+class FilterForm(forms.Form):
+  selectedAuthor = forms.ModelChoiceField(queryset=NewsStory.objects.all().order_by('-pub_date'), required=True)

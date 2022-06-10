@@ -8,6 +8,27 @@
 {% block content %}
 
     <h2>Latest News</h2>
+    <!-- <form action="{% url 'news:index' %}" method="GET">
+        <label for="select-author">Stories by </label>
+        <select name="select-author">
+            <option disabled="true">Select Author</option>
+            {% for author in authors %}
+            <option value="{{ author }}">{{ author }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Filter">
+    </form>
+    <p>{{ form }}</p> -->
+
+    <form method="get" class="author-selection">
+        <p>
+            <b>Authors: 
+                {% for author in authors %}
+                <input type="submit" name="author" value="{{ author }}">
+                {% endfor %}
+            </b>
+        </p>
+    </form>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -26,13 +47,6 @@
             {% endfor %}
         {% else %}
             <p>No stories are available.</p>
-        {% endif %}
-    </div>
-
-    <div>
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'news:newStory' %}">Write New Story</a>
-        {% else %}
         {% endif %}
     </div>
 

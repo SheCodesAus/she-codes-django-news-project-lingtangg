@@ -87,5 +87,38 @@
 
 /* Form styling */
 .form-control {
-    background-color: red;
+    font-family: monospace;
+    font-weight: 600;
+    padding: 0.5%;
+}
+
+.form-control label {
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.form-control input,
+.form-control textarea {
+    padding: 5px;
+}
+
+/* Button styling */
+.author-selection input,
+#submit-story {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: solid black;
+    border-radius: 0.1em;
+    text-decoration: none;
+    font-family: monospace;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
+
+.author-selection input:hover,
+#submit-story:hover {
+    color: white;
+    background-color: black;
 }
