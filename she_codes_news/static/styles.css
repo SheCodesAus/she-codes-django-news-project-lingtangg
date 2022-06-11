@@ -52,3 +52,25 @@ a {
 a, p {
     font-family: monospace;
 }
+
+/* Button styling */
+.create-account,
+#login,
+.change-password {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: solid black;
+    border-radius: 0.1em;
+    text-decoration: none;
+    font-family: monospace;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
+
+.create-account:hover,
+#login:hover,
+.change-password:hover {
+    color: white;
+    background-color: black;
+}

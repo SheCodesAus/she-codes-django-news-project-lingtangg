@@ -9,24 +9,16 @@
 <div class="user-details">
   <div>
     <p>
-      Email:
+      Email: {{ request.user.email }}
     </p>
     <p>
-      Last active:
+      Last active: {{ request.user.last_login }}
     </p>
     <p>
-      Account created:
+      Account created: {{ request.user.date_joined }}
     </p>
     <p>
-      Change password
-    </p>
-  </div>
-  <div>
-    <p>
-      {{ request.user.email }}
-    </p>
-    <p>
-      {{ request.CustomUser.last_login}}
+      <a href="{% url 'users:changePassword' %}"><input type="button" value="Change Password" class="change-password"></a>
     </p>
   </div>
 </div>
