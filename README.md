@@ -1,8 +1,8 @@
 # Plus Resources: Django Project Starter
 
-Starter code for the Plus Django project.
-
 Deployment to Heroku / running the server after preparing for deployment runs into an error where the dj_database_url module could not be found. The most recent commit runs into that error. The previous commit (commit 76182e40786ae4ac9c48d3d804839dc148dbc471) has no issues running the server and its functionalities. 
+
+Link to Heroku: https://fierce-crag-41898.herokuapp.com/
 
 Please find screenshots of the working server below:
 
