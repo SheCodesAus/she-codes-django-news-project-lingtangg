@@ -14,7 +14,7 @@
         <img src="{{ story.img_url }}">
         {{ story.content|linebreaks }}
     </div>
-    {% if request.user.is_authenticated %}
+    {% if request.user.id == story.author_id %}
         <a href="{% url 'news:editStory' pk=story.id %}"><input type="button" value="Edit / Delete Story" id="edit-story"></a>
     {% else %}
     {% endif %}

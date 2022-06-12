@@ -2,6 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import DeleteView
 from .models import NewsStory
 from .forms import StoryForm
 from users.models import CustomUser
@@ -41,8 +42,12 @@ class AddStoryView(generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class StoryDelete(DeleteView):
+    model = NewsStory
+    success_url = reverse_lazy('news:index')
 
 @login_required
+# UpdateView can also be used
 def edit_story(request, *args, **kwargs):
     id = kwargs['pk']
     story_contents = NewsStory.objects.get(id=id)
@@ -59,5 +64,7 @@ def edit_story(request, *args, **kwargs):
             update_form.save()
             return redirect('/news')
     return render(request, 'news/editStory.html', {
-        'form': form
+        'form': form,
+        'story_contents': story_contents
     })
+

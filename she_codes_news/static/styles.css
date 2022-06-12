@@ -58,7 +58,8 @@ a, p {
 .change-password,
 #login,
 #edit-story,
-#update-story {
+#update-story,
+#delete-story {
     display: inline-block;
     padding: 0.35em 1.2em;
     border: solid black;
@@ -74,7 +75,8 @@ a, p {
 .change-password:hover,
 #login:hover,
 #edit-story:hover,
-#update-story:hover {
+#update-story:hover,
+#delete-story:hover {
     color: white;
     background-color: black;
 }
