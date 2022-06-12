@@ -8,17 +8,6 @@
 {% block content %}
 
     <h2>Latest News</h2>
-    <!-- <form action="{% url 'news:index' %}" method="GET">
-        <label for="select-author">Stories by </label>
-        <select name="select-author">
-            <option disabled="true">Select Author</option>
-            {% for author in authors %}
-            <option value="{{ author }}">{{ author }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Filter">
-    </form>
-    <p>{{ form }}</p> -->
 
     <form method="get" class="author-selection">
         <p>

@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-
-<p class="container">
+<p><b>Edit / Delete Story</b></p>
+<p>
   <form action="" method="post">
     {% csrf_token %}
     {{ form.non_field_errors }}
@@ -32,9 +32,10 @@
           {{ form.img_url }}
       </div>
       <div class="form-control">
-        <input type="submit" value="Submit" id="submit-story">
+        <input type="submit" value="Update Story" id="update-story">
       </div>
   </form>
 </p>
+
 
 {% endblock %}

@@ -1,7 +1,7 @@
-from audioop import reverse
 from django.views import generic
 from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import NewsStory
 from .forms import StoryForm
 from users.models import CustomUser
@@ -40,3 +40,24 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+@login_required
+def edit_story(request, *args, **kwargs):
+    id = kwargs['pk']
+    story_contents = NewsStory.objects.get(id=id)
+    initial = {
+        'title': story_contents.title, 
+        'pub_date': story_contents.pub_date, 
+        'content': story_contents.content, 
+        'img_url': story_contents.img_url
+        }
+    form = StoryForm(initial=initial)
+    if request.method == 'POST':
+        update_form = StoryForm(request.POST, instance=story_contents)
+        if update_form.is_valid():
+            update_form.save()
+            return redirect('/news')
+    return render(request, 'news/editStory.html', {
+        'form': form
+    })

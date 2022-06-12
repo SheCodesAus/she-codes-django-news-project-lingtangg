@@ -55,8 +55,10 @@ a, p {
 
 /* Button styling */
 .create-account,
+.change-password,
 #login,
-.change-password {
+#edit-story,
+#update-story {
     display: inline-block;
     padding: 0.35em 1.2em;
     border: solid black;
@@ -69,8 +71,10 @@ a, p {
 }
 
 .create-account:hover,
+.change-password:hover,
 #login:hover,
-.change-password:hover {
+#edit-story:hover,
+#update-story:hover {
     color: white;
     background-color: black;
 }
